@@ -12,6 +12,7 @@
         android:background="#03A9F4"
         android:elevation="8dp"
         android:textColor="#FFFFFF"
+        android:textSize="14sp"
         app:pstsDividerColor="#00000000"
         app:pstsIndicatorColor="#FFFFFF"
         app:pstsShouldExpand="true"

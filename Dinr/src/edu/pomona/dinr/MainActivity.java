@@ -20,11 +20,14 @@ public class MainActivity extends ActionBarActivity {
 		// Get the ViewPager and set it's PagerAdapter so that it can display items
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(new TabAdapter(getSupportFragmentManager()));
+        viewPager.setOffscreenPageLimit(5);
 
         // Give the PagerSlidingTabStrip the ViewPager
         PagerSlidingTabStrip tabsStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         // Attach the view pager to the tab strip
         tabsStrip.setViewPager(viewPager);
+        getSupportActionBar().setElevation(0);
+        getSupportActionBar().setTitle("Dinr");
 	}
 
 	@Override
