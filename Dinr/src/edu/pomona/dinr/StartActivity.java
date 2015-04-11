@@ -1,5 +1,9 @@
 package edu.pomona.dinr;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -19,7 +23,10 @@ import com.parse.*;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
@@ -54,6 +61,7 @@ public class StartActivity extends ActionBarActivity {
 			public void onSuccess(LoginResult loginResult) {
 				AccessToken accessToken = loginResult.getAccessToken();
 				
+				// Get the user id and name, save to Parse
 				GraphRequest request = GraphRequest.newMeRequest(
 				        accessToken,
 				        new GraphRequest.GraphJSONObjectCallback() {
@@ -61,8 +69,9 @@ public class StartActivity extends ActionBarActivity {
 				            public void onCompleted(JSONObject object, GraphResponse response) {
 								ParseObject newStudent = new ParseObject("Student");
 								try {
-									newStudent.put("id", object.getString("id"));
+									newStudent.put("fb_id", object.getString("id"));
 									newStudent.put("name", object.getString("name"));
+									newStudent.put("pic_url", "http://graph.facebook.com/" +  object.getString("id") + "/picture?type=large"); 
 								} catch (JSONException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
@@ -73,7 +82,7 @@ public class StartActivity extends ActionBarActivity {
 				Bundle parameters = new Bundle();
 				parameters.putString("fields", "id,name");
 				request.setParameters(parameters);
-				request.executeAsync();
+				request.executeAsync();	
 			}
 
 			@Override
