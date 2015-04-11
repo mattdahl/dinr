@@ -51,9 +51,13 @@ public class StartActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_start);
 		
 		// Logo
-		TextView txt = (TextView) findViewById(R.id.logo);
+		final TextView logo = (TextView) findViewById(R.id.logo);
 		Typeface font = Typeface.createFromAsset(this.getAssets(), "fonts/chatlet.ttf");
-		txt.setTypeface(font);
+		logo.setTypeface(font);
+		
+		// Other element refs
+		final TextView slogan = (TextView) findViewById(R.id.slogan);
+		final View loginButton = findViewById(R.id.login_button);
 		
 		callbackManager = CallbackManager.Factory.create();
 
@@ -61,6 +65,13 @@ public class StartActivity extends ActionBarActivity {
 				new FacebookCallback<LoginResult>() {
 			@Override
 			public void onSuccess(LoginResult loginResult) {
+				// Clear background view
+				logo.setVisibility(View.GONE);
+				slogan.setVisibility(View.GONE);
+				loginButton.setVisibility(View.GONE);
+				logo.getRootView().setBackgroundColor(getResources().getColor(android.R.color.black));
+				logo.getRootView().setBackground(null);
+				
 				AccessToken accessToken = loginResult.getAccessToken();
 				
 				// Get the user id, name, and pic_url, and save to Parse
