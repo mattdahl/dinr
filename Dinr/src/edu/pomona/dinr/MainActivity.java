@@ -1,7 +1,11 @@
 package edu.pomona.dinr;
 
+import com.astuetz.PagerSlidingTabStrip;
+
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,14 +16,15 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		// Get the ViewPager and set it's PagerAdapter so that it can display items
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager.setAdapter(new TabAdapter(getSupportFragmentManager()));
 
-		if (savedInstanceState == null) {
-			FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-			SlidingTabsFragment fragment = new SlidingTabsFragment();
-			transaction.replace(R.id.tab_holder, fragment);
-			transaction.commit();
-		}
-
+        // Give the PagerSlidingTabStrip the ViewPager
+        PagerSlidingTabStrip tabsStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+        // Attach the view pager to the tab strip
+        tabsStrip.setViewPager(viewPager);
 	}
 
 	@Override
@@ -40,4 +45,5 @@ public class MainActivity extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
 }

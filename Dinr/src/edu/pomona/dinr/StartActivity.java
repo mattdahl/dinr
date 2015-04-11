@@ -66,7 +66,8 @@ public class StartActivity extends ActionBarActivity {
 	
 	private void moveToNextScreen(boolean setupComplete) {
 		if (setupComplete) {
-			// go to meal screen
+			Intent intent = new Intent(this, MainActivity.class);
+			this.startActivity(intent);
 		} else {
 			Intent intent = new Intent(this, SupplementaryDataActivity.class);
 			this.startActivity(intent);

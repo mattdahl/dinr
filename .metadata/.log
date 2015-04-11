@@ -14087,3 +14087,9 @@ java.lang.NoClassDefFoundError: Could not initialize class com.facebook.login.wi
 
 !ENTRY com.android.ide.eclipse.adt 4 0 2015-04-10 23:06:03.925
 !MESSAGE Warning: Ignoring name conflict in resource file for name hello_blank_fragment
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-04-10 23:44:34.026
+!MESSAGE Warning: Ignoring name conflict in resource file for name hello_blank_fragment
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-04-10 23:44:55.367
+!MESSAGE Warning: Ignoring name conflict in resource file for name hello_blank_fragment
