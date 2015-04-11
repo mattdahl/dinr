@@ -1,8 +1,21 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="edu.pomona.dinr.MatchesFragment" >
+
+    <TextView
+        android:id="@+id/instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="sans-serif-light"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        android:text="You&apos;ve been matched! Set up meals with these people :)"
+        android:textSize="20sp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view"
@@ -10,4 +23,4 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical" />
 
-</FrameLayout>
+</LinearLayout>

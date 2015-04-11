@@ -55,6 +55,8 @@ public class StartActivity extends ActionBarActivity {
 		Typeface font = Typeface.createFromAsset(this.getAssets(), "fonts/chatlet.ttf");
 		logo.setTypeface(font);
 		
+		this.getSupportActionBar().hide();
+		
 		// Other element refs
 		final TextView slogan = (TextView) findViewById(R.id.slogan);
 		final View loginButton = findViewById(R.id.login_button);

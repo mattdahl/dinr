@@ -1,11 +1,20 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="${relativePackage}.${activityClass}" >
    
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:tint="#88000000"
+        android:src="@drawable/frary" />
     
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <Button		
         android:id="@+id/skip_button"		
         android:layout_width="match_parent"		
@@ -18,8 +27,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:text="Dinr"
+        android:textColor="#FFFFFF"
         android:textSize="86sp" />
 
     <TextView
@@ -28,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textSize="36sp"
+        android:textColor="#FFFFFF"
         android:text="It's a Match!" />
 
     <com.facebook.login.widget.LoginButton
@@ -36,8 +47,8 @@
         android:layout_height="80dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="30dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
         style="@style/FacebookLoginButton"/>
 
-
 </LinearLayout>
+</FrameLayout>

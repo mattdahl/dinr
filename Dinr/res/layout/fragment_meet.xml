@@ -1,12 +1,25 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="edu.pomona.dinr.MeetFragment" >
+
+    <TextView
+        android:id="@+id/instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="sans-serif-light"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        android:text="Swipe right to meet, swipe left to delete!"
+        android:textSize="20sp" />
 
     <com.andtinder.view.CardContainer
         android:id="@+id/profile_stack"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
 
-</FrameLayout>
+</LinearLayout>

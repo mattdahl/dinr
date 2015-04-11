@@ -57,6 +57,18 @@
                 android:paddingTop="4dp"
                 android:text="Pomona College"
                 android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EBEBEB" />
+
+            <Button
+                android:id="@+id/contact"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="contact" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
 

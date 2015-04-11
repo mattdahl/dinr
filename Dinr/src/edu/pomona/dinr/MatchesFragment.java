@@ -67,7 +67,7 @@ public class MatchesFragment extends Fragment {
 
         // specify an adapter (see also next example)
         /* TODO: send real names */
-        mAdapter = new MatchesAdapter(new String[] {"Zach Hauser"});
+        mAdapter = new MatchesAdapter(new String[] {"Zach Hauser"}, getActivity());
         mRecyclerView.setAdapter(mAdapter);
 		return v;
 	}
