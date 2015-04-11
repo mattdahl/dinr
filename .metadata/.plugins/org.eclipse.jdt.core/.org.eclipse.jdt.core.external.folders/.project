@@ -15,19 +15,19 @@
 			<location>/Users/Jerry/Library/Android/android-sdk/sources/android-22</location>
 		</link>
 		<link>
-			<name>.link3</name>
+			<name>.link1</name>
+			<type>2</type>
+			<location>/Users/Jerry/Library/Android/android-sdk/sources/android-19</location>
+		</link>
+		<link>
+			<name>.link2</name>
 			<type>2</type>
 			<location>/Users/Jerry/Library/Android/android-sdk/sources/android-21</location>
 		</link>
 		<link>
-			<name>.link4</name>
+			<name>.link3</name>
 			<type>2</type>
 			<location>/Users/Jerry/Library/Android/android-sdk/sources/android-15</location>
-		</link>
-		<link>
-			<name>.link5</name>
-			<type>2</type>
-			<location>/Users/Jerry/Library/Android/android-sdk/sources/android-19</location>
 		</link>
 	</linkedResources>
 </projectDescription>

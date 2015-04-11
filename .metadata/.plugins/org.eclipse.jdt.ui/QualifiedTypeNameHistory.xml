@@ -5,4 +5,9 @@
 <fullyQualifiedTypeName name="android.view.View"/>
 <fullyQualifiedTypeName name="android.view.LayoutInflater"/>
 <fullyQualifiedTypeName name="android.view.ViewGroup"/>
+<fullyQualifiedTypeName name="com.facebook.CallbackManager"/>
+<fullyQualifiedTypeName name="com.facebook.login.LoginResult"/>
+<fullyQualifiedTypeName name="com.facebook.FacebookCallback"/>
+<fullyQualifiedTypeName name="com.facebook.login.LoginManager"/>
+<fullyQualifiedTypeName name="com.facebook.FacebookException"/>
 </qualifiedTypeNameHistroy>
