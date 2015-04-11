@@ -38,7 +38,7 @@ public class ParseInterface {
 	 */
 	public static void pushStudent(String id, String name, String major,
 			String[] breakfast, String[] lunch, String[] dinner, 
-			String college, String year, String interests) {
+			String college, String year, String interests, String pic_url) {
 		ParseObject newStudent = new ParseObject("Student");
 		newStudent.put("objectId", id);
 		newStudent.put("id", id);
@@ -50,6 +50,7 @@ public class ParseInterface {
 		newStudent.put("college", college);
 		newStudent.put("year", year);
 		newStudent.put("interests", interests);
+		newStudent.put("pic_url", pic_url);
 		newStudent.saveInBackground();
 	}
 	
@@ -68,6 +69,7 @@ public class ParseInterface {
 		    	object.put("BreakfastHalls", breakfast);
 		    	object.put("LunchHalls", lunch);
 		    	object.put("DinnerHalls", dinner);
+		    	object.saveInBackground();
 		    } else {
 		      // something went wrong
 		    }
@@ -100,7 +102,7 @@ public class ParseInterface {
 							JSONObject elt = array.getJSONObject(i);
 							students[i] = new Student(elt.getString("objectId"), elt.getString("name"), elt.getString("major"),
 									(String[]) elt.get("BreakfastHalls"), (String[]) elt.get("LunchHalls"), (String[]) elt.get("DinnerHalls"),
-									elt.getString("college"), elt.getString("year"), elt.getString("interests"));
+									elt.getString("college"), elt.getString("year"), elt.getString("interests"), elt.getString("pic_url"));
 									
 						}
 						

@@ -1,5 +1,10 @@
 package edu.pomona.dinr;
 
+import com.andtinder.model.CardModel;
+import com.andtinder.model.Orientations.Orientation;
+import com.andtinder.view.CardContainer;
+import com.andtinder.view.SimpleCardStackAdapter;
+
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,19 +23,10 @@ import android.view.ViewGroup;
  */
 public class MeetFragment extends Fragment {
 	private OnFragmentInteractionListener mListener;
+	private CardContainer c;
 
-	/**
-	 * Use this factory method to create a new instance of this fragment using
-	 * the provided parameters.
-	 *
-	 * @param param1
-	 *            Parameter 1.
-	 * @param param2
-	 *            Parameter 2.
-	 * @return A new instance of fragment MeetFragment.
-	 */
 	// TODO: Rename and change types and number of parameters
-	public static MeetFragment newInstance(String param1, String param2) {
+	public static MeetFragment newInstance() {
 		MeetFragment fragment = new MeetFragment();
 		return fragment;
 	}
@@ -48,7 +44,13 @@ public class MeetFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// Inflate the layout for this fragment
-		return inflater.inflate(R.layout.fragment_meet, container, false);
+		View v = inflater.inflate(R.layout.fragment_meet, container, false);
+		c = (CardContainer) v.findViewById(R.id.profile_stack);
+		c.setOrientation(Orientation.Ordered);
+		SimpleCardStackAdapter adapter = new SimpleCardStackAdapter(this.getActivity());
+		adapter.add(new CardModel("Title1", "Description goes here", getActivity().getResources().getDrawable(R.drawable.zachhauser)));
+		c.setAdapter(adapter);
+		return v;
 	}
 
 	// TODO: Rename method, update argument and hook method into UI event
