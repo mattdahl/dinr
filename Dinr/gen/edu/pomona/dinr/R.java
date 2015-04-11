@@ -2080,7 +2080,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0b003f;
         public static final int action_mode_bar_stub=0x7f0b003e;
         public static final int action_mode_close_button=0x7f0b0031;
-        public static final int action_settings=0x7f0b005c;
+        public static final int action_settings=0x7f0b005e;
         public static final int activity_chooser_view_content=0x7f0b0032;
         public static final int always=0x7f0b0025;
         public static final int automatic=0x7f0b0009;
@@ -2091,13 +2091,13 @@ containing a value of this type.
         public static final int center=0x7f0b0018;
         public static final int checkbox=0x7f0b003a;
         public static final int collapseActionView=0x7f0b0026;
-        public static final int com_facebook_body_frame=0x7f0b0056;
-        public static final int com_facebook_button_xout=0x7f0b0058;
-        public static final int com_facebook_fragment_container=0x7f0b0054;
-        public static final int com_facebook_login_activity_progress_bar=0x7f0b0055;
-        public static final int com_facebook_tooltip_bubble_view_bottom_pointer=0x7f0b005a;
-        public static final int com_facebook_tooltip_bubble_view_text_body=0x7f0b0059;
-        public static final int com_facebook_tooltip_bubble_view_top_pointer=0x7f0b0057;
+        public static final int com_facebook_body_frame=0x7f0b0058;
+        public static final int com_facebook_button_xout=0x7f0b005a;
+        public static final int com_facebook_fragment_container=0x7f0b0056;
+        public static final int com_facebook_login_activity_progress_bar=0x7f0b0057;
+        public static final int com_facebook_tooltip_bubble_view_bottom_pointer=0x7f0b005c;
+        public static final int com_facebook_tooltip_bubble_view_text_body=0x7f0b005b;
+        public static final int com_facebook_tooltip_bubble_view_top_pointer=0x7f0b0059;
         public static final int decor_content_parent=0x7f0b0040;
         public static final int default_activity_button=0x7f0b0035;
         public static final int dialog=0x7f0b002a;
@@ -2118,8 +2118,9 @@ containing a value of this type.
         public static final int left=0x7f0b0019;
         public static final int listMode=0x7f0b001c;
         public static final int list_item=0x7f0b0036;
-        public static final int login_button=0x7f0b0052;
-        public static final int messenger_send_button=0x7f0b005b;
+        public static final int login_button=0x7f0b0054;
+        public static final int logo=0x7f0b0052;
+        public static final int messenger_send_button=0x7f0b005d;
         public static final int middle=0x7f0b002e;
         public static final int never=0x7f0b0028;
         public static final int never_display=0x7f0b000b;
@@ -2145,7 +2146,8 @@ containing a value of this type.
         public static final int showCustom=0x7f0b0021;
         public static final int showHome=0x7f0b0022;
         public static final int showTitle=0x7f0b0023;
-        public static final int skip_button=0x7f0b0053;
+        public static final int skip_button=0x7f0b0055;
+        public static final int slogan=0x7f0b0053;
         public static final int small=0x7f0b000e;
         public static final int split_action_bar=0x7f0b0004;
         public static final int standard=0x7f0b0014;
@@ -2487,6 +2489,9 @@ containing a value of this type.
         public static final int CardView=0x7f070000;
         public static final int CardView_Dark=0x7f070002;
         public static final int CardView_Light=0x7f070001;
+        /**  Facebook Login Button 
+         */
+        public static final int FacebookLoginButton=0x7f070112;
         public static final int MessengerButton=0x7f070003;
         public static final int MessengerButton_Blue=0x7f070004;
         public static final int MessengerButton_Blue_Large=0x7f070005;

@@ -25,11 +25,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class StartActivity extends ActionBarActivity {
@@ -39,6 +41,8 @@ public class StartActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		final SharedPreferences pref = getSharedPreferences("setup", Context.MODE_PRIVATE);
+		
 		// Parse setup
 		Parse.enableLocalDatastore(this); 
 		Parse.initialize(this, "KiNCYv9wB1ehPSx3oFcyOZJppUihboq1FGbjfhMr", "Vtz801AypDVOmKcbURKigQo6Nr3zg3H8nliZXDbv");
@@ -46,12 +50,10 @@ public class StartActivity extends ActionBarActivity {
 		FacebookSdk.sdkInitialize(getApplicationContext());
 		setContentView(R.layout.activity_start);
 		
-		SharedPreferences pref = getSharedPreferences("setup", Context.MODE_PRIVATE);
-		if (pref.getBoolean("setup_complete", false)) {
-			moveToNextScreen(true);
-		} else {
-			// do the stupid facebook crap
-		}
+		// Logo
+		TextView txt = (TextView) findViewById(R.id.logo);
+		Typeface font = Typeface.createFromAsset(this.getAssets(), "fonts/chatlet.ttf");
+		txt.setTypeface(font);
 		
 		callbackManager = CallbackManager.Factory.create();
 
@@ -61,7 +63,7 @@ public class StartActivity extends ActionBarActivity {
 			public void onSuccess(LoginResult loginResult) {
 				AccessToken accessToken = loginResult.getAccessToken();
 				
-				// Get the user id and name, save to Parse
+				// Get the user id, name, and pic_url, and save to Parse
 				GraphRequest request = GraphRequest.newMeRequest(
 				        accessToken,
 				        new GraphRequest.GraphJSONObjectCallback() {
@@ -77,6 +79,9 @@ public class StartActivity extends ActionBarActivity {
 									e.printStackTrace();
 								}
 								newStudent.saveInBackground();
+								
+								// Advance to the next screen
+								moveToNextScreen(pref.getBoolean("setup_complete", false));
 				            }
 				        });
 				Bundle parameters = new Bundle();
@@ -91,14 +96,6 @@ public class StartActivity extends ActionBarActivity {
 
 			@Override
 			public void onError(FacebookException exception) {
-			}
-		});
-		
-		Button skipbtn = (Button) findViewById(R.id.skip_button);
-		skipbtn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				moveToNextScreen(false);
 			}
 		});
 	}
