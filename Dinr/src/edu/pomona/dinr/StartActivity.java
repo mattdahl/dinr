@@ -70,7 +70,6 @@ public class StartActivity extends ActionBarActivity {
 		} else {
 			Intent intent = new Intent(this, SupplementaryDataActivity.class);
 			this.startActivity(intent);
-			this.finish();
 		}
 	}
 }

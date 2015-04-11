@@ -38,6 +38,10 @@
             android:name=".SupplementaryDataActivity"
             android:label="@string/title_activity_supplementary_data" >
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
     </application>
 
 </manifest>
