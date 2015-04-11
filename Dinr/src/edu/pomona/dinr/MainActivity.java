@@ -1,6 +1,7 @@
 package edu.pomona.dinr;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,6 +12,14 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		if (savedInstanceState == null) {
+			FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+			SlidingTabsFragment fragment = new SlidingTabsFragment();
+			transaction.replace(R.id.tab_holder, fragment);
+			transaction.commit();
+		}
+
 	}
 
 	@Override

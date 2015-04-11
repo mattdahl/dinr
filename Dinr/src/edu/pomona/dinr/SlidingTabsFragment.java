@@ -109,18 +109,18 @@ public class SlidingTabsFragment extends Fragment {
          * color, which are used by {@link SlidingTabLayout}.
          */
         mTabs.add(new SamplePagerItem("Tab 1", // Title
-                Color.BLUE, // Indicator color
-                Color.GRAY // Divider color
+                Color.WHITE, // Indicator color
+                Color.TRANSPARENT
         ));
 
         mTabs.add(new SamplePagerItem("Tab 2", // Title
-                Color.RED, // Indicator color
-                Color.GRAY // Divider color
+                Color.WHITE, // Indicator color
+                Color.TRANSPARENT // Divider color
         ));
 
         mTabs.add(new SamplePagerItem("Tab 3", // Title
-                Color.YELLOW, // Indicator color
-                Color.GRAY // Divider color
+                Color.WHITE, // Indicator color
+                Color.TRANSPARENT // Divider color
         ));
 
         // END_INCLUDE (populate_tabs)
@@ -133,7 +133,7 @@ public class SlidingTabsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_sliding_tabs, container, false);
+        return inflater.inflate(R.layout.fragment_tabs, container, false);
     }
 
     // BEGIN_INCLUDE (fragment_onviewcreated)
