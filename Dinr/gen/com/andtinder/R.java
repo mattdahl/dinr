@@ -28,12 +28,12 @@ public final class R {
 		public static final int heart = 0x7f020052;
 		public static final int ic_launcher = 0x7f020053;
 		public static final int ic_like = 0x7f020054;
-		public static final int like = 0x7f020055;
-		public static final int people = 0x7f02005f;
-		public static final int picture1 = 0x7f020060;
-		public static final int picture2 = 0x7f020061;
-		public static final int picture3 = 0x7f020062;
-		public static final int slideshow = 0x7f020063;
+		public static final int like = 0x7f020056;
+		public static final int people = 0x7f020060;
+		public static final int picture1 = 0x7f020061;
+		public static final int picture2 = 0x7f020062;
+		public static final int picture3 = 0x7f020063;
+		public static final int slideshow = 0x7f020064;
 	}
 	public static final class id {
 		public static final int btn_sep_1 = 0x7f0b0087;
