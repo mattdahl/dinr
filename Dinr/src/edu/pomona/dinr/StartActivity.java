@@ -1,11 +1,20 @@
 package edu.pomona.dinr;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
+import com.facebook.AccessToken;
+import com.facebook.GraphRequest;
+import com.facebook.GraphRequestAsyncTask;
+import com.facebook.GraphRequestBatch;
+import com.facebook.GraphResponse;
+import com.parse.*;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,6 +31,11 @@ public class StartActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		// Parse setup
+		Parse.enableLocalDatastore(this); 
+		Parse.initialize(this, "KiNCYv9wB1ehPSx3oFcyOZJppUihboq1FGbjfhMr", "Vtz801AypDVOmKcbURKigQo6Nr3zg3H8nliZXDbv");
+		
 		FacebookSdk.sdkInitialize(getApplicationContext());
 		setContentView(R.layout.activity_start);
 		
@@ -38,6 +52,28 @@ public class StartActivity extends ActionBarActivity {
 				new FacebookCallback<LoginResult>() {
 			@Override
 			public void onSuccess(LoginResult loginResult) {
+				AccessToken accessToken = loginResult.getAccessToken();
+				
+				GraphRequest request = GraphRequest.newMeRequest(
+				        accessToken,
+				        new GraphRequest.GraphJSONObjectCallback() {
+				            @Override
+				            public void onCompleted(JSONObject object, GraphResponse response) {
+								ParseObject newStudent = new ParseObject("Student");
+								try {
+									newStudent.put("id", object.getString("id"));
+									newStudent.put("name", object.getString("name"));
+								} catch (JSONException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								newStudent.saveInBackground();
+				            }
+				        });
+				Bundle parameters = new Bundle();
+				parameters.putString("fields", "id,name");
+				request.setParameters(parameters);
+				request.executeAsync();
 			}
 
 			@Override
