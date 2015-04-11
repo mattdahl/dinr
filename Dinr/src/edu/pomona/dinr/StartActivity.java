@@ -1,15 +1,41 @@
 package edu.pomona.dinr;
 
-import android.app.Activity;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.ActionBarActivity;
 
-public class StartActivity extends Activity {
+public class StartActivity extends ActionBarActivity {
+	CallbackManager callbackManager;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		FacebookSdk.sdkInitialize(getApplicationContext());
+		setContentView(R.layout.activity_start);
+		callbackManager = CallbackManager.Factory.create();
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start);
-    }
+		LoginManager.getInstance().registerCallback(callbackManager,
+				new FacebookCallback<LoginResult>() {
+			@Override
+			public void onSuccess(LoginResult loginResult) {
+				// App code
+			}
+
+			@Override
+			public void onCancel() {
+				// App code
+			}
+
+			@Override
+			public void onError(FacebookException exception) {
+				// App code   
+			}
+		});
+	}
 }
+
