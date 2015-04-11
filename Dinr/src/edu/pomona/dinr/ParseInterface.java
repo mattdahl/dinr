@@ -14,8 +14,65 @@ import org.json.simple.parser.*;
 public class ParseInterface {
 
 	
+	public static final String DINNER = "dinner";
+	public static final String LUNCH = "lunch";
+	public static final String BREAKFAST = "breakfast";
+	public static final String BRUNCH = "brunch";
+	
 	private static String capitalize(String input) {
 		return Character.toUpperCase(input.charAt(0)) + input.substring(1);
+	}
+	
+	
+	/**
+	 * 
+	 * @param id
+	 * @param name
+	 * @param major
+	 * @param breakfast
+	 * @param lunch
+	 * @param dinner
+	 * @param college
+	 * @param year
+	 * @param interests
+	 */
+	public static void pushStudent(String id, String name, String major,
+			String[] breakfast, String[] lunch, String[] dinner, 
+			String college, String year, String interests) {
+		ParseObject newStudent = new ParseObject("Student");
+		newStudent.put("objectId", id);
+		newStudent.put("id", id);
+		newStudent.put("name", name);
+		newStudent.put("major", major);
+		newStudent.put("BreakfastHalls", breakfast);
+		newStudent.put("LunchHalls", lunch);
+		newStudent.put("DinnerHalls", dinner);
+		newStudent.put("college", college);
+		newStudent.put("year", year);
+		newStudent.put("interests", interests);
+		newStudent.saveInBackground();
+	}
+	
+	/**
+	 * 
+	 * @param id
+	 * @param breakfast
+	 * @param lunch
+	 * @param dinner
+	 */
+	public static void changeStudent(String id, final String[] breakfast, final String[] lunch, final String[] dinner) {
+		ParseQuery<ParseObject> query = ParseQuery.getQuery("Student");
+		query.getInBackground(id, new GetCallback<ParseObject>() {
+		  public void done(ParseObject object, ParseException e) {
+		    if (e == null) {
+		    	object.put("BreakfastHalls", breakfast);
+		    	object.put("LunchHalls", lunch);
+		    	object.put("DinnerHalls", dinner);
+		    } else {
+		      // something went wrong
+		    }
+		  }
+		});
 	}
 	
 	/**
