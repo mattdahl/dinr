@@ -98,6 +98,14 @@ public class StartActivity extends ActionBarActivity {
 			public void onError(FacebookException exception) {
 			}
 		});
+		
+		Button skipbtn = (Button) findViewById(R.id.skip_button);		
+		skipbtn.setOnClickListener(new View.OnClickListener() {		
+			@Override		
+			public void onClick(View v) {		
+				moveToNextScreen(false);		
+			}		
+		});
 	}
 	
 	@Override
