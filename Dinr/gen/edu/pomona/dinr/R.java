@@ -1809,6 +1809,15 @@ containing a value of this type.
  Default text size for action bar title.
          */
         public static final int abc_text_size_title_material_toolbar=0x7f06002d;
+        /**  Default screen margins, per the Android Design guidelines. 
+
+         Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
+    
+         */
+        public static final int activity_horizontal_margin=0x7f060046;
+        public static final int activity_vertical_margin=0x7f060047;
         /**  Inset shadow for RoundRectDrawableWithShadow. It is used to avoid gaps between the card
      and the shadow. 
          */
@@ -1972,6 +1981,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0b003f;
         public static final int action_mode_bar_stub=0x7f0b003e;
         public static final int action_mode_close_button=0x7f0b0031;
+        public static final int action_settings=0x7f0b005a;
         public static final int activity_chooser_view_content=0x7f0b0032;
         public static final int always=0x7f0b0025;
         public static final int automatic=0x7f0b0009;
@@ -1982,13 +1992,13 @@ containing a value of this type.
         public static final int center=0x7f0b0018;
         public static final int checkbox=0x7f0b003a;
         public static final int collapseActionView=0x7f0b0026;
-        public static final int com_facebook_body_frame=0x7f0b0053;
-        public static final int com_facebook_button_xout=0x7f0b0055;
-        public static final int com_facebook_fragment_container=0x7f0b0051;
-        public static final int com_facebook_login_activity_progress_bar=0x7f0b0052;
-        public static final int com_facebook_tooltip_bubble_view_bottom_pointer=0x7f0b0057;
-        public static final int com_facebook_tooltip_bubble_view_text_body=0x7f0b0056;
-        public static final int com_facebook_tooltip_bubble_view_top_pointer=0x7f0b0054;
+        public static final int com_facebook_body_frame=0x7f0b0054;
+        public static final int com_facebook_button_xout=0x7f0b0056;
+        public static final int com_facebook_fragment_container=0x7f0b0052;
+        public static final int com_facebook_login_activity_progress_bar=0x7f0b0053;
+        public static final int com_facebook_tooltip_bubble_view_bottom_pointer=0x7f0b0058;
+        public static final int com_facebook_tooltip_bubble_view_text_body=0x7f0b0057;
+        public static final int com_facebook_tooltip_bubble_view_top_pointer=0x7f0b0055;
         public static final int decor_content_parent=0x7f0b0040;
         public static final int default_activity_button=0x7f0b0035;
         public static final int dialog=0x7f0b002a;
@@ -2010,7 +2020,7 @@ containing a value of this type.
         public static final int listMode=0x7f0b001c;
         public static final int list_item=0x7f0b0036;
         public static final int login_button=0x7f0b0050;
-        public static final int messenger_send_button=0x7f0b0058;
+        public static final int messenger_send_button=0x7f0b0059;
         public static final int middle=0x7f0b002e;
         public static final int never=0x7f0b0028;
         public static final int never_display=0x7f0b000b;
@@ -2036,6 +2046,7 @@ containing a value of this type.
         public static final int showCustom=0x7f0b0021;
         public static final int showHome=0x7f0b0022;
         public static final int showTitle=0x7f0b0023;
+        public static final int skip_button=0x7f0b0051;
         public static final int small=0x7f0b000e;
         public static final int split_action_bar=0x7f0b0004;
         public static final int standard=0x7f0b0014;
@@ -2102,16 +2113,20 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030014;
         public static final int abc_simple_dropdown_hint=0x7f030015;
         public static final int activity_start=0x7f030016;
-        public static final int com_facebook_activity_layout=0x7f030017;
-        public static final int com_facebook_login_fragment=0x7f030018;
-        public static final int com_facebook_tooltip_bubble=0x7f030019;
-        public static final int messenger_button_send_blue_large=0x7f03001a;
-        public static final int messenger_button_send_blue_round=0x7f03001b;
-        public static final int messenger_button_send_blue_small=0x7f03001c;
-        public static final int messenger_button_send_white_large=0x7f03001d;
-        public static final int messenger_button_send_white_round=0x7f03001e;
-        public static final int messenger_button_send_white_small=0x7f03001f;
-        public static final int support_simple_spinner_dropdown_item=0x7f030020;
+        public static final int activity_supplementary_data=0x7f030017;
+        public static final int com_facebook_activity_layout=0x7f030018;
+        public static final int com_facebook_login_fragment=0x7f030019;
+        public static final int com_facebook_tooltip_bubble=0x7f03001a;
+        public static final int messenger_button_send_blue_large=0x7f03001b;
+        public static final int messenger_button_send_blue_round=0x7f03001c;
+        public static final int messenger_button_send_blue_small=0x7f03001d;
+        public static final int messenger_button_send_white_large=0x7f03001e;
+        public static final int messenger_button_send_white_round=0x7f03001f;
+        public static final int messenger_button_send_white_small=0x7f030020;
+        public static final int support_simple_spinner_dropdown_item=0x7f030021;
+    }
+    public static final class menu {
+        public static final int supplementary_data=0x7f0c0000;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -2170,6 +2185,7 @@ containing a value of this type.
         /**  Content description for the Toolbar icon used to collapse an expanded action mode. [CHAR LIMIT=NONE] 
          */
         public static final int abc_toolbar_collapse_description=0x7f080015;
+        public static final int action_settings=0x7f080025;
         public static final int app_name=0x7f080021;
         public static final int com_facebook_image_download_unknown_error=0x7f08000e;
         public static final int com_facebook_internet_permission_error_message=0x7f08000c;
@@ -2190,6 +2206,7 @@ containing a value of this type.
         public static final int facebook_app_id=0x7f080023;
         public static final int hello_world=0x7f080022;
         public static final int messenger_send_button_text=0x7f080000;
+        public static final int title_activity_supplementary_data=0x7f080024;
     }
     public static final class style {
         public static final int Animation_AppCompat_DropDownUp=0x7f0700e7;
