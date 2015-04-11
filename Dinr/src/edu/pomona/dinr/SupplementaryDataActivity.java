@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class SupplementaryDataActivity extends ActionBarActivity {
 
@@ -14,9 +15,20 @@ public class SupplementaryDataActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_supplementary_data);
+		
+		this.setTitle("Your Profile");
 
-		Button skipbtn = (Button) findViewById(R.id.skip_button);
-		skipbtn.setOnClickListener(listener);
+		Button doneButton = (Button) findViewById(R.id.done_button);
+		doneButton.setOnClickListener(listener);
+		
+		EditText name_label = (EditText) findViewById(R.id.name_edit);
+		name_label.setText("Matt Dahl");
+
+		EditText major_label = (EditText) findViewById(R.id.major_edit);
+		major_label.setText("Politics");
+		
+		EditText college_label = (EditText) findViewById(R.id.college_edit);
+		college_label.setText("Pomona");
 	}
 
 	@Override

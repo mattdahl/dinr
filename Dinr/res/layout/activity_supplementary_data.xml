@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:label="Your Profile"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,16 +10,116 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.pomona.dinr.SupplementaryDataActivity" >
 
-    <TextView
+    <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="collect additional data we couldn&apos;t scrape from fb" />
+        android:layout_gravity="center_horizontal" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            
+            <TextView
+                android:id="@+id/name_label"
+       			android:layout_width="wrap_content"
+       			android:layout_height="wrap_content"
+       			android:text="Name"
+       			android:labelFor="@+id/name_edit"
+       			android:layout_marginRight="5dp"  			
+      		/>
+
+            <EditText
+                android:id="@+id/name_edit"
+                android:inputType="text"                
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10" >
+            </EditText>
+            
+        </TableRow>
+
+        <TableRow
+            android:layout_gravity="center_horizontal"            
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            
+            <TextView
+                android:id="@+id/major_label"
+       			android:layout_width="wrap_content"
+       			android:layout_height="wrap_content"
+       			android:text="Major"
+       			android:labelFor="@+id/major_edit"
+       			android:layout_marginRight="5dp" 		       			       			       			
+      		/>
+
+            <EditText
+                android:id="@+id/major_edit"
+                android:inputType="text"                
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10" >
+            </EditText>
+        </TableRow>
+
+       	<TableRow
+            android:layout_gravity="center_horizontal"       	    
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            
+            <TextView
+                android:id="@+id/college_label"
+       			android:layout_width="wrap_content"
+       			android:layout_height="wrap_content"
+       			android:text="College"
+       			android:labelFor="@+id/college_edit"
+       			android:layout_marginRight="5dp" 		       			       			       			
+      		/>
+
+            <EditText
+                android:id="@+id/college_edit"
+                android:inputType="text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10" >
+            </EditText>
+        </TableRow>
+        
+       	<TableRow
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            
+            <TextView
+                android:id="@+id/interests_label"
+       			android:layout_width="wrap_content"
+       			android:layout_height="wrap_content"
+       			android:text="Interests"
+       			android:labelFor="@+id/interests_edit"
+       			android:layout_marginRight="5dp" 		       			       			
+      		/>
+
+            <EditText
+                android:id="@+id/interests_edit"
+                android:inputType="text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10" >
+                
+                <requestFocus />
+            </EditText>
+        </TableRow>
+    </TableLayout>
 
     <Button
-        android:id="@+id/skip_button"
+        android:id="@+id/done_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="8dp"
-        android:text="Skip" />
+        android:layout_marginTop="20dp"
+        android:text="Done" />
 
 </LinearLayout>
