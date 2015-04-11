@@ -1,0 +1,14 @@
+{
+  "global": {
+    "parseVersion": "1.4.2"
+  },
+  "applications": {
+    "Dinr": {
+      "applicationId": "KiNCYv9wB1ehPSx3oFcyOZJppUihboq1FGbjfhMr",
+      "masterKey": "ktz330zASA6npg5QEtWzYq89FV7xtxM3iJ3t9Pk1"
+    },
+    "_default": {
+      "link": "Dinr"
+    }
+  }
+}
